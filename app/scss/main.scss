@@ -1,0 +1,352 @@
+@import "_reset";
+@import "_variables";
+@import "_fonts";
+//import font-awesome
+@import "../../node_modules/@fortawesome/fontawesome-free/scss/fontawesome";
+@import "../../node_modules/@fortawesome/fontawesome-free/scss/brands";
+@import "../../node_modules/@fortawesome/fontawesome-free/scss/regular";
+@import "../../node_modules/@fortawesome/fontawesome-free/scss/solid";
+@import "../../node_modules/@fortawesome/fontawesome-free/scss/v4-shims";
+
+
+.wrapper {
+  font-family: $fontsLato;
+  position: relative;
+}
+
+/**************block header**********************/
+.header {
+  display: flex;
+  height: 37px;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  padding-left: 19px;
+  color: $text-color-white;
+  font-weight: 500;
+  background-color: #373c3f;
+  box-sizing: border-box;
+  position: relative;
+
+
+  &__link {
+    font-family: $fontsMontserrat;
+
+    &:hover {
+      color: $bg-color-light-green;
+    }
+  }
+  &__logo {
+    display: none;
+  }
+}
+
+.burger-menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 41px;
+  height: 100%;
+  padding: 13px 13px;
+  box-sizing: border-box;
+  background-color: #202529;
+  cursor: pointer;
+  &__line{
+    position: relative;
+    transform-origin: 0 1px;
+    height: 2px;
+    background-color: #fff;
+    transition: 0.4s;
+  }
+  &_crossed{
+    padding: 9px 13px;
+  }
+  &_crossed &__line:nth-child(2){
+    display: none;
+  }
+  &_crossed &__line:first-child{
+    transform: rotate(45deg);
+    width: 24px;
+  }
+  &_crossed &__line:last-child{
+    transform: rotate(-45deg);
+    width: 24px;
+  }
+}
+
+/**************block hidden nav-menu**********************/
+.nav-menu {
+  display: flex;
+  justify-content: flex-start;
+  height: 161px;
+  width: 182px;
+  background-color: $bg-color-nav-bar-hidden;
+  flex-direction: column;
+  position: absolute;
+  color: $text-color-nav-bar;
+  font-weight: 400;
+  box-shadow: $box-shadow-nav-menu;
+  box-sizing: border-box;
+  top: 100%;
+  right: 0;
+  transition: 0.4s;
+  &_hidden{
+    transform: translateY(-150%);
+  }
+  &__item{
+    display: inline-flex;
+    width: 100%;
+    flex: 1 0 30px;
+    align-items: center;
+    box-sizing: border-box;
+    padding-left: 12px;
+    text-transform: capitalize;
+    transition: 0.4s;
+    cursor: pointer;
+    &:hover{
+      background-color:$bg-color-nav-bar-hover ;
+    }
+    &:nth-child(2n){
+      flex-basis: 34px;
+      border-top: 2px solid $border-gray;
+      border-bottom: 2px solid $border-gray;
+    }
+  }
+}
+
+/**************block banner **********************/
+.banner {
+  display: flex;
+  flex-direction: column;
+  height: 173px;
+  background-image: url("../img/main-banner-bg.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  box-sizing: border-box;
+  padding: 15px 20px;
+  font-weight: 700;
+  margin-bottom: 4px;
+
+  &__title {
+    display: inline-block;
+    font-size: 16px;
+    line-height: 22px;
+    color: $text-color-white;
+  }
+
+  & a {
+    display: inline-block;
+    color: $text-color-blue-gray;
+    font-size: 14px;
+    margin-top: 7px;
+
+    &:hover {
+      color: $bg-color-light-green;
+    }
+  }
+
+}
+
+/**************block cards**********************/
+.cards {
+  &__item {
+    display: flex;
+    justify-content: space-between;
+    height: 75px;
+    color: $text-color-white;
+    font-weight: 700;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 2px;
+  }
+
+  &__item-banner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: cover;
+    box-sizing: border-box;
+    flex-basis: calc(100% - 71px);
+
+    &_bg-pizza {
+      background-position: left 84%;
+      background-image: url("../img/pizza-deliv-bg.png");
+    }
+
+    &_bg-salads {
+      background-position: left 90%;
+      background-image: url("../img/ui-ux-salad-bg.png");
+    }
+
+    &_bg-desserts {
+      background-position: left 15%;
+      background-image: url("../img/desserts-bg.png");
+    }
+  }
+
+  &__title {
+    font-size: 20px;
+    //padding-left: 1px;
+    &_p-left {
+      padding-left: 23px;
+    }
+  }
+
+  &__item-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    flex-basis: 71px;
+    background-color: $bg-color-light-green;
+    line-height: 100%;
+    cursor: pointer;
+
+    &:hover {
+      color: $color-dark-red;
+    }
+  }
+}
+
+/*********************block menu**************/
+.menu {
+  display: flex;
+  flex-direction: column;
+  margin-top: 21px;
+}
+
+.header-menu {
+  padding: 0 10px;
+
+  &__title {
+    margin-bottom: 4px;
+    font-size: 20px;
+    color: $text-color-dark-gray;
+    font-weight: 400;
+    white-space: nowrap; //(не переносит текст)
+    text-transform: uppercase;
+    word-spacing: -1px;
+  }
+
+  &__sub-title {
+    font-size: 10px;
+    color: $text-color-header-menu__sub-title;
+    font-weight: 400;
+  }
+
+  &__icon {
+    display: none;
+  }
+}
+
+.content-menu {
+  &__container {
+    margin-top: 10px;
+  }
+
+  &__title {
+    background-color: $bg-color-content-menu__title;
+    height: 37px;
+    line-height: 37px;
+    text-transform: uppercase;
+    padding-left: 19px;
+    width: 100%;
+    font-size: 20px;
+    color: $bg-color-light-green;
+    font-weight: 400;
+    margin-bottom: 12px;
+    box-sizing: border-box;
+
+    &_color-green {
+      color: #fff;
+      background-color: #acd8ad;
+      margin-top: 18px;
+    }
+  }
+
+  &__meal-type {
+    padding: 0 16px 6px 18px;
+  }
+
+  &__meal-header {
+    display: flex;
+    height: 25px;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 15px;
+    color: $text-color-dark-gray;
+    font-weight: 400;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+
+    &_m-top {
+      margin-top: 4px;
+    }
+  }
+
+  &__icon {
+    font-size: 25px;
+    color: $bg-color-light-green;
+  }
+
+  &__icon.fa-wine-glass-alt {
+    padding-right: 6px;
+  }
+
+  &__icon.fa-beer {
+    padding-right: 5px;
+  }
+
+  &__meal-item {
+    font-size: 9px;
+    color: $text-color-dark-gray;
+    font-weight: 400;
+    margin-bottom: 10px;
+  }
+
+  &__meal-item-header {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    margin-bottom: 8px;
+  }
+
+  &__meal-name {
+    word-spacing: -2px;
+  }
+
+  &__meal-text {
+    text-align: justify;
+  }
+}
+
+.footer {
+  margin-top: 35px;
+  padding-top: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 55px;
+  color: $text-color-white;
+  background-color: $bg-color-light-green;
+  font-size: 12px;
+  line-height: 16px;
+  font-family: $fontsMontserrat;
+  font-weight: 400;
+  text-align: center;
+
+  &__logo {
+    display: none;
+  }
+
+  &__title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@import "media";
